@@ -35,12 +35,7 @@ database = MainDatabase("users.db")
              ]"""
 
 info_user_db = select_all_acc()
-check_status = {}
-
-for i in info_user_db:
-    check_status[i[1]] = i[4]
-
-
+check_status = {i[1]: i[4] for i in info_user_db}
 class Variable:
     api_id = info_user_db[-1][1]
     api_hash = info_user_db[-1][2]
